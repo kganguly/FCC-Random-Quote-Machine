@@ -1,0 +1,135 @@
+:root {
+  --rnd-color: black;
+}
+
+body {
+  background-color: black;
+}
+
+
+/* STRETCH: Work on box when height too small for quote*/
+#main {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0;
+  max-width: 550px;
+  font-family: 'Raleway', sans-serif;
+  opacity: 0;
+  border-style: none;
+}
+
+@media only screen and (min-width: 768px) {
+  #main {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 550px;
+    padding: 20px 50px 50px 50px;
+    border-style: solid;
+    border-radius: 3px;
+    border-color: var(--rnd-color);
+  }
+  
+  footer {
+    position: absolute;
+    right: 5px;
+    bottom: 0;
+    clear: both;
+    text-align: right;
+    opacity: 0.5;
+  }
+}
+
+/*STRETCH: color can get to dark to read low opacity of cite*/
+blockquote,
+.cite {
+  color: var(--rnd-color);
+}
+
+#quote {
+  font-size: 140%;
+}
+
+#quote::before {
+  content: "\f10d";
+  font-family: FontAwesome;
+  font-size: x-large;
+  margin-right: 10px;
+}
+
+blockquote {
+  padding-bottom: 40px;
+  border-left: none;
+  opacity: 0.8;
+}
+
+.cite {
+  opacity: 0.6;
+  font-size: 80%;
+  cursor: pointer;
+  text-shadow: 0 0 5px black, 0 0 20px var(--rnd-color), 0 0 30px var(--rnd-color), 0 0 40px var(--rnd-color), 0 0 70px var(--rnd-color), 0 0 80px var(--rnd-color), 0 0 100px var(--rnd-color);
+  transition: text-shadow 2s, opacity 1s;
+}
+
+.cite:hover {
+  text-shadow: 0 0 5px black, 0 0 20px var(--rnd-color), 0 0 30px var(--rnd-color), 0 0 40px var(--rnd-color), 0 0 70px var(--rnd-color), 0 0 80px var(--rnd-color), 0 0 100px var(--rnd-color);
+  opacity: 1;
+}
+
+button {
+  background-color: var(--rnd-color);
+  border-radius: 3px;
+  color: white;
+  border-style: none;
+  outline-style: none;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button:active {
+  opacity: 0.8;
+  transition: opacity 0.1s ease-in;
+}
+
+/*STRETCH: twitter and quote buttons seem to have different heights*/
+#twitter {
+  padding: 10px 15px 10px 15px !important;
+}
+
+#newQuote {
+  padding: 10px 20px 10px 20px !important;
+  font-size: 90% !important;
+}
+
+.controls {
+  padding-bottom: 25px;
+}
+
+footer {
+  margin: auto;
+  clear: both;
+  opacity: 0.5;
+  text-align: right;
+}
+
+/* add brightening on hover */
+footer:hover {
+  opacity: 1;
+}
+
+footer .signature {
+  color: #39598e;
+}
+
+footer .signature:hover, footer .signature:focus {
+  text-decoration: none;
+}
